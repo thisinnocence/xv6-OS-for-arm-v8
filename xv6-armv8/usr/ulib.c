@@ -129,3 +129,13 @@ memmove(void *vdst, void *vsrc, int n)
         *dst++ = *src++;
     return vdst;
 }
+
+// https://stackoverflow.com/questions/27290086/gcc-canaries-undefined-reference-to-stack-chk-guard
+unsigned long __stack_chk_guard;
+void __stack_chk_guard_setup(void)
+{
+    __stack_chk_guard = 0xBAAAAAAD;
+}
+void __stack_chk_fail(void)
+{
+}

@@ -1,0 +1,14 @@
+.cache/
+build/
+
+fs.img
+initcode
+kernel.elf
+tools/mkfs
+compile_commands.json
+
+_*
+*.o
+*.asm
+*.sym
+*.log

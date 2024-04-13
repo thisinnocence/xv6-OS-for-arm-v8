@@ -47,3 +47,13 @@ void kmain (void)
     userinit();					// first user process
     scheduler();				// start running processes
 }
+
+// https://stackoverflow.com/questions/27290086/gcc-canaries-undefined-reference-to-stack-chk-guard
+unsigned long __stack_chk_guard;
+void __stack_chk_guard_setup(void)
+{
+    __stack_chk_guard = 0xBAAAAAAD;
+}
+void __stack_chk_fail(void)
+{
+}
