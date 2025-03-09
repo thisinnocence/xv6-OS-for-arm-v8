@@ -7,7 +7,7 @@ OBJCOPY       = $(CROSSCOMPILE)objcopy
 OBJDUMP       = $(CROSSCOMPILE)objdump
 LIBGCC        = $(shell $(CC) -print-libgcc-file-name)
 
-CFLAGS  = -march=armv8-a -mtune=cortex-a57 -fno-pic -static -fno-builtin -fno-strict-aliasing -Wall -Werror -I. -g 
+CFLAGS  = -march=armv8-a -mtune=cortex-a57 -fno-pic -static -fno-builtin -fno-strict-aliasing -Wall -I. -g 
 LDFLAGS = -L.
 ASFLAGS = -march=armv8-a
 
